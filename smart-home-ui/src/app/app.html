@@ -1,0 +1,32 @@
+<div class="app-shell" [class.motion-subtle]="motionMode() === 'subtle'" [class.motion-lively]="motionMode() === 'lively'">
+  <nav class="navbar">
+    <span class="brand">&#127968; Smart Home</span>
+    <a class="nav-link" routerLink="/devices" routerLinkActive="active">Devices</a>
+    <a class="nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+    <a class="nav-link" routerLink="/rules" routerLinkActive="active">Automation Rules</a>
+    <a class="nav-link" routerLink="/reports" routerLinkActive="active">Reports</a>
+
+    <div class="motion-switch" role="group" aria-label="Animation style">
+      <button
+        type="button"
+        class="motion-option"
+        [class.active]="motionMode() === 'subtle'"
+        (click)="setMotionMode('subtle')"
+      >
+        Subtle
+      </button>
+      <button
+        type="button"
+        class="motion-option"
+        [class.active]="motionMode() === 'lively'"
+        (click)="setMotionMode('lively')"
+      >
+        Lively
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <router-outlet />
+  </main>
+</div>

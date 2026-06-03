@@ -1,0 +1,6 @@
+@SmartHomeAutomationSystem.Api_HostAddress = http://localhost:5121
+
+GET {{SmartHomeAutomationSystem.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
